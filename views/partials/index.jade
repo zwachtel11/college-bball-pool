@@ -1,0 +1,14 @@
+p There are {{posts.length}} teams
+
+h3 Leader Board
+div(ng-repeat='post in posts')
+  div {{post.title}}
+div(ng-repeat='post in posts')
+  h3 {{post.title}}
+  div                 GAME 1  2   3  4  5  6
+  div {{post.playname0}}  {{post.playpoints0[0]}}   {{post.playpoints0[1]}}   {{post.playpoints0[2]}}   {{post.playpoints0[3]}}   {{post.playpoints0[4]}}   {{post.playpoints0[5]}}
+  div {{post.playname1}}  {{post.playpoints1[0]}}   {{post.playpoints1[1]}}   {{post.playpoints1[2]}}   {{post.playpoints1[3]}}   {{post.playpoints1[4]}}   {{post.playpoints1[5]}}
+  div {{post.playname2}}  {{post.playpoints2[0]}}   {{post.playpoints2[1]}}   {{post.playpoints2[2]}}   {{post.playpoints2[3]}}   {{post.playpoints2[4]}}   {{post.playpoints2[5]}}
+  div {{post.playname3}}  {{post.playpoints3[0]}}   {{post.playpoints3[1]}}   {{post.playpoints3[2]}}   {{post.playpoints3[3]}}   {{post.playpoints3[4]}}   {{post.playpoints3[5]}}
+  div {{post.playname4}}  {{post.playpoints4[0]}}   {{post.playpoints4[1]}}   {{post.playpoints4[2]}}   {{post.playpoints4[3]}}   {{post.playpoints4[4]}}   {{post.playpoints4[5]}}
+  div {{post.playname5}}  {{post.playpoints5[0]}}   {{post.playpoints5[1]}}   {{post.playpoints5[2]}}   {{post.playpoints5[3]}}   {{post.playpoints5[4]}}   {{post.playpoints5[5]}}
