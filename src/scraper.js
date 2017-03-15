@@ -1,3 +1,4 @@
+'use strict'
 const request = require('request')
 const HTTPS = require('https')
 const HTTP = require('http')
