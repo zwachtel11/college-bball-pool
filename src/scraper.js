@@ -185,8 +185,13 @@ const addPlayers = (playernames) => {
        count++
      }
      else {
-       count = 0;
+       count = 1;
        i++;
+       teams[i].players.push({
+        name: playername,
+        date: ts - (24 * 3600),
+        points: [0]
+       })
      }
   })
 }

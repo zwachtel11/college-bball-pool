@@ -16,7 +16,7 @@ exports.posts = function (req, res) {
        return console.error(err);
    }
    data.teams = JSON.parse(dat)
-    data.teams.forEach(function (team, i) {
+   data.teams.forEach(function (team, i) {
       posts.push({
         id: i,
         title: team.name,
