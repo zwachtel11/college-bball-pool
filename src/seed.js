@@ -95,28 +95,6 @@ const playernames = [
                 'Jawun Evans'
 ]
 
-
-const cleanPoints = (notSure) => {
-  const notSures = notSure
-  const td = Math.round(new Date().getTime() / 1000);
-
-  players.forEach((player) => {
-    if (notSures.includes(player.name)){
-      const stats = notSures.replace(/[^0-9]+/, '').replace('"]', '')
-      if ( player.date < (td - (23 * 3600)) ) {
-        if (stats.length > 36) {
-          player.points.push(stats.slice(-2))
-        }
-        else {
-          player.points.push(stats.slice(-1))
-        }
-      player.date = td
-    }
-  }
-  })
-  return
-  }
-
 const exportCsv = () => {
   const fields = ['name', 'players']
   const csv = json2csv({ data: teams, fields: fields, unwindPath: 'name' })
@@ -128,25 +106,6 @@ const exportCsv = () => {
     if (err) throw err
     console.log('json saved')
   })
-}
-
-
-const getPoints = () => {
-  osmosis
-    .get('http://www.sports-reference.com/cbb/boxscores/')
-    .find('//table[@class="teams"]')
-    .find('//td[@class="right gamelink"]')
-    .follow('@href')
-    .find('//tbody')
-    .find('//tr')
-    .then((pts) => {
-       cleanPoints(JSON.stringify(pts.text().split('\n')))
-    })
-    .done(() => {
-      sumUpPoints()
-      exportCsv()
-    })
-    .error(console.log)
 }
 
 
@@ -167,11 +126,6 @@ const sumUpPoints = () => {
     team.sum = sum.reduce((acc, val) => {
       return acc + val
     })
-  })
-  teams.sort((a,b) => {
-    if (a.sum < b.sum) return  -1;
-    if (a.sum > b.sum) return - 1;
-    return 0;
   })
 }
 
@@ -198,23 +152,3 @@ const addPlayers = (playernames) => {
      }
   })
 }
-const ts = Math.round(new Date().getTime() / 1000);
-
-
-//console.log(teams)
-
-
-fs.readFile('data.json', function (err, data) {
-   if (err) {
-       return console.error(err);
-   }
-   //console.log("Data: " + data.toString());
-   teams = JSON.parse(data)
-   //console.log(teams.toString())
-   getPoints()
-})
-
-
-//createTeams(names)
-//addPlayers(playernames)
-//console.log(teams[0].players)
