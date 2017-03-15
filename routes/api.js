@@ -20,6 +20,7 @@ exports.posts = function (req, res) {
       posts.push({
         id: i,
         title: team.name,
+        sum: team.sum,
         playname0: team.players[0].name,
         playpoints0: team.players[0].points,
         playname1: team.players[1].name,

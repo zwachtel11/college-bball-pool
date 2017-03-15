@@ -5,7 +5,25 @@ const json2csv = require('json2csv')
 const fs = require('fs')
 const osmosis = require('osmosis')
 let players = []
-let teams = []
+let teams = [{name:'Team Wachtel',
+              players:[
+                      {
+                      name: 'Malik Monk',
+                      date: (24 * 3600),
+                      points: [0,12,45]
+                      },
+                      {
+                      name: 'Malik Monk1',
+                      date: (24 * 3600),
+                      points: [0,12,45]
+                      },
+                      {
+                      name: 'Malik Monk1',
+                      date: (24 * 3600),
+                      points: [0,12,45]
+                      }
+                    ],
+              sum:0}]
 const names = [
                 'team0',
                 'team1',
@@ -13,10 +31,7 @@ const names = [
                 'team3',
                 'team4',
                 'team5',
-                'team6',
-                'team7',
-                'team8',
-                'team9',
+                'team6'
 ]
 const playernames = [
                 'player1',
@@ -137,9 +152,24 @@ const getPoints = () => {
     return players
 }
 
+
 const createTeams = (names) => {
   names.forEach((name) => {
-      teams.push({name:name, players:[]})
+      teams.push({name:name, players:[], sum:0})
+  })
+}
+
+const sumUpPoints = () => {
+  teams.forEach((team) => {
+    const sum = []
+    team.players.forEach((player) => {
+        sum.push(player.points.reduce((acc, val) => {
+        return acc + val
+      }))
+    })
+    team.sum = sum.reduce((acc, val) => {
+      return acc + val
+    })
   })
 }
 
@@ -162,6 +192,11 @@ const addPlayers = (playernames) => {
   })
 }
 const ts = Math.round(new Date().getTime() / 1000);
+
+sumUpPoints()
+console.log(teams)
+
+/*
 fs.readFile('data.json', function (err, data) {
    if (err) {
        return console.error(err);
@@ -170,9 +205,10 @@ fs.readFile('data.json', function (err, data) {
 //   teams = data
    console.log(teams.toString())
 })
+*/
 
-createTeams(names)
-addPlayers(playernames)
+//createTeams(names)
+//addPlayers(playernames)
 //console.log(teams[0].players)
-exportCsv()
+//exportCsv()
 //getPoints()
