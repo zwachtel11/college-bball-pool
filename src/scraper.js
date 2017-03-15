@@ -5,95 +5,94 @@ const json2csv = require('json2csv')
 const fs = require('fs')
 const osmosis = require('osmosis')
 let players = []
-let teams = [{name:'Team Wachtel',
-              players:[
-                      {
-                      name: 'Malik Monk',
-                      date: (24 * 3600),
-                      points: [0,12,45]
-                      },
-                      {
-                      name: 'Malik Monk1',
-                      date: (24 * 3600),
-                      points: [0,12,45]
-                      },
-                      {
-                      name: 'Malik Monk1',
-                      date: (24 * 3600),
-                      points: [0,12,45]
-                      }
-                    ],
-              sum:0}]
+let teams = []
 const names = [
-                'team0',
-                'team1',
-                'team2',
-                'team3',
-                'team4',
-                'team5',
-                'team6'
-]
+            'Caspert',
+            'Chirls	',
+            'Rogers',
+            'Steiger',
+            'Slutsky',
+            'Halpern',
+            'Heiser',
+            'Brodsky',
+            'Saffrin',
+            'Eiten',
+            'Glick',
+            'Green'
+          ]
 const playernames = [
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1',
-                'player1'
+                'Justin Jackson',
+                'Isaiah Hicks',
+                'Kris Jenkins',
+                'Rawle Alkins',
+                'Marcus Marshall',
+                'Aaron Holiday',
+                'Luke Kennard',
+                'Donovan Mitchell',
+                'Edrice Adebayo',
+                'Naz Long',
+                'Trevon Bluiett',
+                'Steve Vasturia',
+                'Frank Mason III',
+                'Jalen Brunson',
+                'Jordan Matthews',
+                'Isaiah Briscoe',
+                'Deonte Burton',
+                'Dusan Rastic',
+                'Allonzo Trier',
+                'T.J. Leaf',
+                'Amile Jefferson',
+                'VJ Beachem',
+                'Derrick Walton Jr.',
+                'Sindarius Thornwell',
+                'Josh Hart',
+                'Dillon Brooks',
+                'Jonathan Motley',
+                'Kelan Martin',
+                'London Perrantes',
+                'Devon Reed',
+                'Jayson Tatum',
+                'Lauri Markkanen',
+                'Semi Ojeleye',
+                'Isaac Hamilton',
+                'Zach Collins',
+                'Theo Pinson',
+                'Josh Jackson',
+                'De\'Aaron Fox',
+                'Tyler Dorsey',
+                'Dwyane Bacon',
+                'Kadeem Allen',
+                'Desi Rodriguez',
+                'Nigel Williams-Goss',
+                'Caleb Swanigan',
+                'Bonzie Colson',
+                'Monte Morris',
+                'Marcus Foster',
+                'Matt Farrell',
+                'Lonzo Ball',
+                'Bryce Alford',
+                'Frank Johnson',
+                'Jacorey Williams',
+                'Jock Lindale',
+                'Landen Lucas',
+                'Joel Berry III',
+                'Grayson Allen',
+                'Jonathan Williams',
+                'Dylan Ennis',
+                'Mikal Bridges',
+                'Ethan Happ',
+                'Malik Monk',
+                'Przemek Karnowski',
+                'Svi Mykhailiuk',
+                'Quentin Snider',
+                'Donte DiVincenzo',
+                'Tony Bradley',
+                'Devonte\' Graham',
+                'Kennedy Meeks',
+                'Jevon Carter',
+                'Deng Adel',
+                'Bronson Koenig',
+                'Jawun Evans'
 ]
 
 
@@ -193,8 +192,8 @@ const addPlayers = (playernames) => {
 }
 const ts = Math.round(new Date().getTime() / 1000);
 
-sumUpPoints()
-console.log(teams)
+//sumUpPoints()
+//console.log(teams)
 
 /*
 fs.readFile('data.json', function (err, data) {
@@ -207,8 +206,8 @@ fs.readFile('data.json', function (err, data) {
 })
 */
 
-//createTeams(names)
-//addPlayers(playernames)
+createTeams(names)
+addPlayers(playernames)
 //console.log(teams[0].players)
-//exportCsv()
+exportCsv()
 //getPoints()
