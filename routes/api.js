@@ -23,16 +23,22 @@ exports.posts = function (req, res) {
         sum: team.sum,
         playname0: team.players[0].name,
         playpoints0: team.players[0].points,
+        playtotal0: team.players[0].total,
         playname1: team.players[1].name,
         playpoints1: team.players[1].points,
+        playtotal1: team.players[1].total,
         playname2: team.players[2].name,
         playpoints2: team.players[2].points,
+        playtotal2: team.players[2].total,
         playname3: team.players[3].name,
         playpoints3: team.players[3].points,
+        playtotal3: team.players[3].total,
         playname4: team.players[4].name,
         playpoints4: team.players[4].points,
+        playtotal4: team.players[4].total,
         playname5: team.players[5].name,
-        playpoints5: team.players[5].points
+        playpoints5: team.players[5].points,
+        playtotal5: team.players[5].total,
       });
     });
     res.json({

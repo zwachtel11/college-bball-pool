@@ -30,10 +30,10 @@ const playernames = [
                 'Aaron Holiday',
                 'Luke Kennard',
                 'Donovan Mitchell',
-                'Edrice Adebayo',
                 'Naz Long',
                 'Trevon Bluiett',
                 'Steve Vasturia',
+                'Edrice Adebayo',
                 'Frank Mason III',
                 'Jalen Brunson',
                 'Jordan Matthews',
@@ -42,16 +42,16 @@ const playernames = [
                 'Dusan Rastic',
                 'Allonzo Trier',
                 'T.J. Leaf',
-                'Amile Jefferson',
                 'VJ Beachem',
                 'Derrick Walton Jr.',
                 'Sindarius Thornwell',
+                'Amile Jefferson',
                 'Josh Hart',
                 'Dillon Brooks',
                 'Jonathan Motley',
                 'Kelan Martin',
-                'London Perrantes',
                 'Devon Reed',
+                'London Perrantes',
                 'Jayson Tatum',
                 'Lauri Markkanen',
                 'Semi Ojeleye',
@@ -62,8 +62,8 @@ const playernames = [
                 'De\'Aaron Fox',
                 'Tyler Dorsey',
                 'Dwyane Bacon',
-                'Kadeem Allen',
                 'Desi Rodriguez',
+                'Kadeem Allen',
                 'Nigel Williams-Goss',
                 'Caleb Swanigan',
                 'Bonzie Colson',
@@ -79,9 +79,9 @@ const playernames = [
                 'Joel Berry III',
                 'Grayson Allen',
                 'Jonathan Williams',
-                'Dylan Ennis',
                 'Mikal Bridges',
                 'Ethan Happ',
+                'Dylan Ennis',
                 'Malik Monk',
                 'Przemek Karnowski',
                 'Svi Mykhailiuk',
@@ -91,9 +91,9 @@ const playernames = [
                 'Devonte\' Graham',
                 'Kennedy Meeks',
                 'Jevon Carter',
-                'Deng Adel',
                 'Bronson Koenig',
-                'Jawun Evans'
+                'Jawun Evans',
+                'Deng Adel'
 ]
 
 
@@ -150,20 +150,25 @@ const getPoints = () => {
     .error(console.log)
 }
 
-
+/**
 const createTeams = (names) => {
   names.forEach((name) => {
       teams.push({name:name, players:[], sum:0})
   })
 }
-
+**/
 const sumUpPoints = () => {
   teams.forEach((team) => {
     const sum = []
-    team.players.forEach((player) => {
-        sum.push(player.points.reduce((acc, val) => {
-        return acc + val
-      }))
+    team.players.forEach((player, i) => {
+        if (i < 5) {
+          sum.push(player.points.reduce((acc, val) => {
+          return acc + val
+          }))
+        }
+        player.total = player.points.reduce((acc, val) => {
+          return acc + val
+      })
     })
     team.sum = sum.reduce((acc, val) => {
       return acc + val
@@ -175,7 +180,7 @@ const sumUpPoints = () => {
     return 0;
   })
 }
-
+/*
 const addPlayers = (playernames) => {
   count = 0;
   i = 0;
@@ -199,7 +204,8 @@ const addPlayers = (playernames) => {
      }
   })
 }
-const ts = Math.round(new Date().getTime() / 1000);
+*/
+
 
 
 //console.log(teams)

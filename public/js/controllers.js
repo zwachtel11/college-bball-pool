@@ -31,6 +31,11 @@ angular.module('myApp.controllers', []).
     $http.get('/api/posts').
       success(function(data, status, headers, config) {
         $scope.posts = data.posts;
+        $scope.myStyle = {
+          "color":"white",
+          "font-family":"Arial",
+          "background-color":"red"
+        }
       });
   }
 
