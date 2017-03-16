@@ -72,7 +72,7 @@ const playernames = [
                 'Matt Farrell',
                 'Lonzo Ball',
                 'Bryce Alford',
-                'Frank Johnson',
+                'Frank Jackson',
                 'Jacorey Williams',
                 'Jock Lindale',
                 'Landen Lucas',
