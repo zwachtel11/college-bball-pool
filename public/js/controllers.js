@@ -35,7 +35,13 @@ angular.module('myApp.controllers', []).
           "color":"white",
           "font-family":"Arial",
           "background-color":"red"
-        }
+        };
+        $scope.myStyle1 = {
+          "position": "relative",
+          "left": "50px",
+          "word-spacing": "80px"
+        };
+
       });
   }
 

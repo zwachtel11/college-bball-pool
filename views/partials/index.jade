@@ -5,10 +5,67 @@ div(ng-repeat='post in posts')
   div {{post.title}} {{post.sum}}
 div(ng-repeat='post in posts')
   h3(ng-style="myStyle") {{post.title}}
-  div                 GAME&nbsp&nbsp&nbsp1&nbsp&nbsp&nbsp2&nbsp&nbsp&nbsp3&nbsp&nbsp&nbsp4&nbsp&nbsp&nbsp5&nbsp&nbsp&nbsp6&nbsp&nbsp&nbsptotal
-  div {{post.playname0}}  {{post.playpoints0[0]}}   {{post.playpoints0[1]}}   {{post.playpoints0[2]}}   {{post.playpoints0[3]}}   {{post.playpoints0[4]}}   {{post.playpoints0[5]}}  {{post.playtotal0}}
-  div {{post.playname1}}  {{post.playpoints1[0]}}   {{post.playpoints1[1]}}   {{post.playpoints1[2]}}   {{post.playpoints1[3]}}   {{post.playpoints1[4]}}   {{post.playpoints1[5]}}  {{post.playtotal1}}
-  div {{post.playname2}}  {{post.playpoints2[0]}}   {{post.playpoints2[1]}}   {{post.playpoints2[2]}}   {{post.playpoints2[3]}}   {{post.playpoints2[4]}}   {{post.playpoints2[5]}}  {{post.playtotal2}}
-  div {{post.playname3}}  {{post.playpoints3[0]}}   {{post.playpoints3[1]}}   {{post.playpoints3[2]}}   {{post.playpoints3[3]}}   {{post.playpoints3[4]}}   {{post.playpoints3[5]}}  {{post.playtotal3}}
-  div {{post.playname4}}  {{post.playpoints4[0]}}   {{post.playpoints4[1]}}   {{post.playpoints4[2]}}   {{post.playpoints4[3]}}   {{post.playpoints4[4]}}   {{post.playpoints4[5]}}  {{post.playtotal4}}
-  div {{post.playname5}}  {{post.playpoints5[0]}}   {{post.playpoints5[1]}}   {{post.playpoints5[2]}}   {{post.playpoints5[3]}}   {{post.playpoints5[4]}}   {{post.playpoints5[5]}}  {{post.playtotal5}}
+  table
+    tr
+      th Player
+      th Game 1
+      th Game 2
+      th Game 3
+      th Game 4
+      th Game 5
+      th Game 6
+      th Total
+    tr
+      td {{post.playname0}}
+      td {{post.playpoints0[0]}}
+      td {{post.playpoints0[1]}}
+      td {{post.playpoints0[2]}}
+      td {{post.playpoints0[3]}}
+      td {{post.playpoints0[4]}}
+      td {{post.playpoints0[5]}}
+      td {{post.playtotal0}}
+    tr
+      td {{post.playname1}}
+      td {{post.playpoints1[0]}}
+      td {{post.playpoints1[1]}}
+      td {{post.playpoints1[2]}}
+      td {{post.playpoints1[3]}}
+      td {{post.playpoints1[4]}}
+      td {{post.playpoints1[5]}}
+      td {{post.playtotal1}}
+    tr
+      td {{post.playname2}}
+      td {{post.playpoints2[0]}}
+      td {{post.playpoints2[1]}}
+      td {{post.playpoints2[2]}}
+      td {{post.playpoints2[3]}}
+      td {{post.playpoints2[4]}}
+      td {{post.playpoints2[5]}}
+      td {{post.playtotal2}}
+    tr
+      td {{post.playname3}}
+      td {{post.playpoints3[0]}}
+      td {{post.playpoints3[1]}}
+      td {{post.playpoints3[2]}}
+      td {{post.playpoints3[3]}}
+      td {{post.playpoints3[4]}}
+      td {{post.playpoints3[5]}}
+      td {{post.playtotal3}}
+    tr
+      td {{post.playname4}}
+      td {{post.playpoints4[0]}}
+      td {{post.playpoints4[1]}}
+      td {{post.playpoints4[2]}}
+      td {{post.playpoints4[3]}}
+      td {{post.playpoints4[4]}}
+      td {{post.playpoints4[5]}}
+      td {{post.playtotal4}}
+    tr
+      td {{post.playname5}}
+      td {{post.playpoints5[0]}}
+      td {{post.playpoints5[1]}}
+      td {{post.playpoints5[2]}}
+      td {{post.playpoints5[3]}}
+      td {{post.playpoints5[4]}}
+      td {{post.playpoints5[5]}}
+      td {{post.playtotal5}}
