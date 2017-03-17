@@ -100,7 +100,6 @@ const playernames = [
 const cleanPoints = (notSure) => {
   const notSures = notSure
   const td = Math.round(new Date().getTime() / 1000);
-  console.log(notSures)
   teams.forEach((team) => {
     team.players.forEach((player) => {
       if (notSures.includes(player.name)){
