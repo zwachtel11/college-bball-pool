@@ -100,16 +100,18 @@ const playernames = [
 const cleanPoints = (notSure) => {
   const notSures = notSure
   const td = Math.round(new Date().getTime() / 1000);
+  console.log(notSures)
   teams.forEach((team) => {
     team.players.forEach((player) => {
       if (notSures.includes(player.name)){
         const stats = notSures.replace(/[^0-9]+/, '').replace('"]', '')
         if ( player.date < (td - (12 * 3600)) ) {
-          if (stats.length > 35) {
+          if (stats.length > 34) {
             player.points.push(stats.slice(-2))
           }
           else {
             player.points.push(stats.slice(-1))
+            player.name = player.name + "*"
           }
           player.date = td
         }
