@@ -22,7 +22,7 @@ const names = [
             'Green'
           ]
 const playernames = [
-                'Justin Jackson',
+                'Justin Jackson*',
                 'Isaiah Hicks',
                 'Kris Jenkins',
                 'Rawle Alkins',
@@ -100,21 +100,23 @@ const playernames = [
 const cleanPoints = (notSure) => {
   const notSures = notSure
   const td = Math.round(new Date().getTime() / 1000);
-
-  players.forEach((player) => {
-    if (notSures.includes(player.name)){
-      const stats = notSures.replace(/[^0-9]+/, '').replace('"]', '')
-      if ( player.date < (td - (23 * 3600)) ) {
-        if (stats.length > 36) {
-          player.points.push(stats.slice(-2))
+  teams.forEach((team) => {
+    team.players.forEach((player) => {
+      if (notSures.includes(player.name)){
+        const stats = notSures.replace(/[^0-9]+/, '').replace('"]', '')
+        if ( player.date < (td - (12 * 3600)) ) {
+          if (stats.length > 35) {
+            player.points.push(stats.slice(-2))
+          }
+          else {
+            player.points.push(stats.slice(-1))
+          }
+          player.date = td
         }
-        else {
-          player.points.push(stats.slice(-1))
-        }
-      player.date = td
-    }
-  }
+      }
+    })
   })
+
   return
   }
 
@@ -144,7 +146,7 @@ const getPoints = () => {
        cleanPoints(JSON.stringify(pts.text().split('\n')))
     })
     .done(() => {
-      sumUpPoints()
+      //sumUpPoints()
       exportCsv()
     })
     .error(console.log)
