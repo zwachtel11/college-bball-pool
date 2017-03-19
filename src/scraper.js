@@ -221,7 +221,9 @@ fs.readFile('data.json', function (err, data) {
    //console.log("Data: " + data.toString());
    teams = JSON.parse(data)
    //console.log(teams.toString())
-   getPoints()
+   //getPoints()
+   sumUpPoints()
+   exportCsv()
 })
 
 
