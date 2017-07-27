@@ -104,7 +104,7 @@ const cleanPoints = (notSure) => {
     team.players.forEach((player) => {
       if (notSures.includes(player.name)){
         const stats = notSures.replace(/[^0-9]+/, '').replace('"]', '')
-        if ( player.date < (td - (12 * 3600)) ) {
+
           if (stats.length > 34) {
             player.points.push(stats.slice(-2))
           }
@@ -113,7 +113,6 @@ const cleanPoints = (notSure) => {
             player.name = player.name + "*"
           }
           player.date = td
-        }
       }
     })
   })
